@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas, Phee!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #d7f2d2); /* Pastel green accent */
+            color: #333;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-bottom: 3px solid #b2e3b2;
+        }
+        .hello-kitty-logo {
+            width: 50px;
+            height: auto;
+        }
+        h1 {
+            color: #5a8f5a;
+            margin: 20px 0;
+        }
+        .tree-container {
+            margin: 20px auto;
+        }
+        .tree {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+            animation: glow 2s infinite alternate;
+        }
+        .message {
+            font-size: 1.2em;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #5a8f5a;
+            display: inline-block;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            color: #5a8f5a;
+            max-width: 80%;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .message span {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            text-align: right;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #5a8f5a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #497449;
+        }
+        #access-form {
+            display: none;
+            margin-top: 20px;
+        }
+        @keyframes glow {
+            0% {
+                filter: drop-shadow(0 0 10px #fff);
+            }
+            100% {
+                filter: drop-shadow(0 0 30px #ff0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://stickypng.com/cdn-cgi/image/format=auto/hello-kitty-logo.png" alt="Hello Kitty Logo" class="hello-kitty-logo">
+        <h1>Merry Christmas, Phee!</h1>
+    </header>
+    <div id="content">
+        <div class="tree-container">
+            <img class="tree" src="https://purepng.com/public/uploads/large/christmas-tree.png" alt="Christmas Tree">
+        </div>
+        <div class="message">
+            Dear Phee,<br>
+            You light up every day like this Christmas tree! Here's to all the laughs, chats, and unforgettable moments we share. 🎄<br>
+            <span>Love, Harry</span>
+        </div>
+        <button class="button" onclick="showAmazingMessage()">Click for a Surprise!</button>
+    </div>
+    <div id="access-form">
+        <h2>Enter the Early Access Code</h2>
+        <input type="password" id="access-code" placeholder="Enter Code">
+        <button class="button" onclick="checkAccessCode()">Submit</button>
+    </div>
+    <script>
+        // Check if today is December 25th
+        const today = new Date();
+        const isChristmas = today.getMonth() === 11 && today.getDate() === 25;
+
+        if (!isChristmas) {
+            document.getElementById('content').style.display = 'none';
+            document.getElementById('access-form').style.display = 'block';
+        }
+
+        function checkAccessCode() {
+            const accessCode = document.getElementById('access-code').value;
+            if (accessCode === '123ilovephee') {
+                alert('Welcome, early access granted!');
+                document.getElementById('access-form').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('PHEEEE!');
+            }
+        }
+
+        function showAmazingMessage() {
+            alert('Phee, you are amazing! 💖');
+        }
+
+        document.querySelector('.tree').addEventListener('click', () => {
+            alert('You’re the star at the top of my tree! 🌟');
+        });
+    </script>
+</body>
+</html>
